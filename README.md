@@ -30,6 +30,24 @@ Additionally, you can specify add up to 2 vlan tags to be added with the `vlans`
 `vlans` - dot1q vlans to be added after crafted L2 header  
 `overwrite` - allows output file to be overwritten  
 
+## INSTALLATION
+
+Installation requires Python >= 3.6 and associated `pip` tool
+
+    python3 -m pip install jepop
+
+Installing from Git is also supported (OS must have git installed).
+
+    To install the latest MASTER code
+    python3 -m pip install git+https://github.com/Juniper/jepop.git
+    -or-
+    To install a specific version, branch, tag, etc.
+    python3 -m pip install git+https://github.com/Juniper/jepop.git@<branch,tag,commit>
+
+Upgrading has the same requirements as installation and has the same format with the addition of --upgrade
+
+    python3 -m pip install jepop --upgrade
+
 ## LICENSE
 
 GPL-2.0  
