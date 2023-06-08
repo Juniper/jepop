@@ -1,0 +1,5 @@
+NOTICES FOR THIRD-PARTY CODE/DEPENDENCIES
+
+Name: scapy
+Project URL: https://scapy.net
+License: GNU General Public License v2.0
