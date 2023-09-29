@@ -233,10 +233,10 @@ class JuniperEthernetIrbL2OutputLogicalInterfaceIndexTLV(JuniperEthernetExtensio
 class JuniperEthernet(Packet):
     name = "JuniperEthernet"
     fields_desc = [
-        X3BytesField("magic_number", 0x4D4743),
+        X3BytesField("magic_number", 0x4d4743),
         FlagsField("extensions_present", 0, 6, ["f0", "f1", "f2", "f3", "f4", "f5"]),
-        FlagsField("l2_header_presence", 0, 1, ["f0"]),
-        FlagsField("direction", 0, 1, ["f0"]),
+        FlagsField("l2_header_presence", 0, 1, ["f0"]), # 0 == True, 1 == False
+        FlagsField("pkt_direction", 0, 1, ["f0"]), # 0 == outbound, 1 == inbound
         FieldLenField("extensions_length", None, length_of="tlv_objects"),
         PacketListField(
             "tlv_objects",

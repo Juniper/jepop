@@ -115,6 +115,9 @@ def main():
             out_pkts.append(in_pkt)
             continue
         je_pkt = JuniperEthernet(in_pkt.load)
+        if je_pkt.magic_number != 0x4d4743:
+            print('magic number does not match expectation, this is a bug')
+            continue
         if je_pkt.l3_payload and vlans:
             # inbound packet with L3 payload, add Ethernet and Dot1Q headers
             out_pkt = Ether(src=smac, dst=dmac)
